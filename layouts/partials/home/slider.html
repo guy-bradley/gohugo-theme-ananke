@@ -1,0 +1,24 @@
+{{ with .Site.Data.home.slider }}
+    {{ if .enable }}
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="slider_active owl-carousel">
+        {{ range $index, $Section := .sliderItem }}
+            <div class="single_slider cover d-flex align-items-center justify-content-center" style="background-image: url('{{ .url }}');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text text-center">
+                                <h3>{{ .heading }}</h3>
+                                <p>{{ .subheading }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{ end }}
+        </div>
+    </div>
+    <!-- slider_area_end -->
+    {{ end }}
+{{ end }}
